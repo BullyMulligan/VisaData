@@ -79,7 +79,7 @@
 
 <div class="form-group">
     <input type="checkbox" id="isPermanentResident" name="isPermanentResident" value="true" onchange="toggleResidenceCountryField()"/>
-    <label for="isPermanentResident">Являетесь ли вы постоянным жителем страны, отличающейся от той, которую вы указали в гражданстве?</label>
+    <label for="isPermanentResident">Являетесь ли вы постоянным жителем страны,<br/> отличающейся от той, которую вы указали в гражданстве?</label>
 </div>
 
 <div id="residenceCountryField" style="display: none;">
@@ -116,72 +116,74 @@
 </div>
     
 <h2>Информация о поездке</h2>
-<div class="form-group">
-    <dir class="form-group">
-        <div class="form-group">
-            <label>Цель поездки в США.Выберите тип визы:</label>
-            <p><select id="visaType" name="visaType">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                <option value="G">G</option>
-            </select></p>
-            <div id="visaTypeB" style="display:none;">
-                <label>Выберите вид визы:</label>
-                <p><select name="visaTypeB">
-                    <option value="0">Бизнес или конференция</option>
-                    <option value="1">Туристическая или медицинская</option>
-                    <option value="2">Бизнес и туризм</option>
-                </select></p>
-            </div>
-            <label>
-                <input type="checkbox" name="travelPurposeCheckbox" id="travelPurposeCheckbox">
-                Есть ли у вас цель поездки?
-            </label>
-                
-            <div id="travelPurposeInput" style="display:none;">
-                <p><input type="text" name="travelPurpose"></p>
-            </div>
-            <div><label for="arrivalDate">Приблизительная дата прилета:</label><br>
-                <input type="text" id="arrivalDate" name="arrivalDate"><br>
-                                     
-                <label for="arrivalCity">Город аэропорта прилета:</label><br>
-                <input type="text" id="arrivalCity" name="arrivalCity"><br>
-                                     
-                <label for="departureDate">Приблизительная дата вылета:</label><br>
-                <input type="text" id="departureDate" name="departureDate"><br>
-                                     
-                <label for="departureCity">Город аэропорта вылета:</label><br>
-                <input type="text" id="departureCity" name="departureCity"><br></div>
-            <label for="places">Места, которые вы хотите посетить (5-8 названий туристических мест) *важно знать ответ для консула</label>
-            <div id="places-container">
-                <div>
-                    <input type="text" name="place1" id="place1" required>
-                    <button type="button" class="add-btn">+</button>
-                </div>
-            </div>
-            <label for="hotelAdress">Адрес, где вы остановитесь в США (адрес с индексом, номер телефона без пробелов предполагаемого отеля)</label><br>
-            <input type="text" id="hotelAdress" name="hotelAdress"><br>
-            <label>Кто платит за вашу поездку:</label>
-            <p><select id="visaType" name="visaType">
-                <option value=0>сам</option>
-                <option value=1>другой человек</option>
-                <option value=2>нынешний работодатель</option>
-                <option value=3>работодатель в США</option>
-                <option value=4>другая компания или организация</option>
-            </select></p>
-                
-        </div>
-    </dir>
+
+<label>Цель поездки в США.Выберите тип визы:</label>
+<p><select id="visaType" name="visaType">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+</select></p>
+
+<div id="visaTypeB" style="display:none;">
+    <label>Выберите вид визы:</label>
+    <p><select name="visaTypeB">
+        <option value="0">Бизнес или конференция</option>
+        <option value="1">Туристическая или медицинская</option>
+        <option value="2">Бизнес и туризм</option>
+    </select></p>
 </div>
-<h2>Спутники</h2>
+
 <label>
-    <input type="checkbox" name="other_people" onchange="showPeopleFields()">
-    Другие люди путешествуют с вами?
+    <input type="checkbox" name="travelPurposeCheckbox" id="travelPurposeCheckbox">
+    Есть ли у вас цель поездки?
 </label>
+                
+<div id="travelPurposeInput" style="display:none;">
+    <p><input type="text" name="travelPurpose"></p>
+</div>
+
+<div><label for="arrivalDate">Приблизительная дата прилета:</label><br>
+    <input type="text" id="arrivalDate" name="arrivalDate"><br>
+                                     
+    <label for="arrivalCity">Город аэропорта прилета:</label><br>
+    <input type="text" id="arrivalCity" name="arrivalCity"><br>
+                                     
+    <label for="departureDate">Приблизительная дата вылета:</label><br>
+    <input type="text" id="departureDate" name="departureDate"><br>
+                                     
+    <label for="departureCity">Город аэропорта вылета:</label><br>
+    <input type="text" id="departureCity" name="departureCity"><br>
+</div>
+
+<label for="places">Места, которые вы хотите посетить (5-8 названий туристических мест) 
+    *важно знать ответ для консула</label>
+
+<div id="places-container">
+    <div>
+        <input type="text" name="place1" id="place1" required>
+        <button type="button" class="add-btn">+</button>
+    </div>
+</div>
+<label for="hotelAdress">Адрес, где вы остановитесь в США (адрес с индексом,
+    номер телефона без пробелов предполагаемого отеля)</label><br>
+<input type="text" id="hotelAdress" name="hotelAdress"><br>
+
+<label>Кто платит за вашу поездку:</label>
+<p><select id="payer" name="payer">
+    <option value=0>сам</option>
+    <option value=1>другой человек</option>
+    <option value=2>нынешний работодатель</option>
+    <option value=3>работодатель в США</option>
+    <option value=4>другая компания или организация</option>
+</select></p>
+
+<h2>Спутники</h2>
+<label><input type="checkbox" name="otherPeople" onchange="showPeopleFields()">
+    Другие люди путешествуют с вами?</label>
     
 <div id="people_fields" style="display:none">
     <label>
@@ -189,25 +191,22 @@
         Вы путешествуете с организацией или группой?
     </label>
     
-    <div id="people_list">
-        <div class="person">
-            <label>Фамилия и имя:
-                <input type="text" name="person_name[]">
-            </label>
-    
-            <label>Отношение:
-                <select name="person_relation[]">
-                    <option value="Родитель">Родитель</option>
-                    <option value="Ребенок">Ребенок</option>
-                    <option value="Супруг">Супруг</option>
-                    <option value="Другой родственник">Другой родственник</option>
-                    <option value="Друг">Друг</option>
-                    <option value="Деловой партнер">Деловой партнер</option>
-                </select>
-            </label>
-    
-            <button type="button" id="add_person" onclick="addPerson()">+</button>
-        </div>
+    <div id="peopleList">
+        
+        <label>Фамилия и имя:
+            <input type="text" name="person_name[]">
+        </label>
+        <label>Отношение:
+            <select name="person_relation[]">
+                <option value="Родитель">Родитель</option>
+                <option value="Ребенок">Ребенок</option>
+                <option value="Супруг">Супруг</option>
+                <option value="Другой родственник">Другой родственник</option>
+                <option value="Друг">Друг</option>
+                <option value="Деловой партнер">Деловой партнер</option>
+            </select>
+        </label>
+        <button type="button" id="add_person" onclick="addPerson()">+</button>
     </div>
 </div>
 
@@ -227,11 +226,422 @@
         <label for="license-state">Штат, где получали права:</label>
         <p><input type="text" id="license-state" name="license-state"></p>
     </div>
+    
+    <p><label for="visa-earlier">Выдавали ли вам визу в США ранее?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier" onchange="showInfoOfVisaEarlier()"></p>
+    
+    <label for="dateOfIssueOfTheVisa">Дата выдачи:</label>
+    <p><input type="text" id="dateOfIssueOfTheVisa" name="dateOfIssueOfTheVisa"></p>
+    
+    <label for="visaNumber">Номер визы:</label>
+    <p><input type="text" id="visaNumber" name="visaNumber"></p>
+    
+    <p><label for="visa-earlier">Подаете ли вы заявление в той же стране или местоположении, где была выдана вышеуказанная виза, и является ли эта страна или местоположение вашим основным местом жительства?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier"></p>
+    
+    <p><label for="visa-earlier">Вы сдавали отпечатки пальцев?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier"></p>
+    
+    
+    <p><label for="visa-earlier">Вы сдавали отпечатки пальцев?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier"></p>
+    
+    
+    <p><label for="visa-earlier">Виза была потеряна или украдена?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier"></p>
+    
+    
+    <p><label for="visa-earlier">Виза была аннулирована?</label>
+        <input type="checkbox" id="visa-earlier" name="visa-earlier"></p>
+    
+    <div id = "checkGroup">
+        <p><label for="visaRefusal">Отказывали ли вам в визе США или во въезде в страну?</label>
+            <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    
+        <p><div id="reasonOfRefusalVisa"style="display: none">
+            <label for="reasonOfRefusal">Напишите в свободной форме, почему вам отказали в визе:</label>
+            <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+        </div></p>
+    </div>
+    
+    
+    <p><label for="immigrationAttempt">Была ли когда-либо от вашего имени послана петиция в иммиграционный отдел (пытались ли вы иммигрировать)?<br/>(ответ да - если вы выиграли Грин кард и заполняли заявление, или если у вас была виза и вы подавали документы в США, чтобы легализоваться)  </label>
+        <input type="checkbox" id="immigrationAttempt" name="immigrationAttempt"></p>
+    
+</div>
+<H2>Контактная информация</H2>
+
+<h3>Домашний адрес (прописка)</h3>
+
+<label for="visaNumber">Улица, дом, квартира:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Город</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Регион</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Индекс</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Страна</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<div id = "checkGroup">
+    <p><label for="visaRefusal">Почтовый адрес совпадает с адресом проживания?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    <div id='realAdres' style="display: none">
+        
+        <label for="visaNumber">Улица, дом, квартира:</label>
+        <p><input type="text" id="visaNumber" name="visaNumber"></p>
+       
+        <label for="visaNumber">Город</label>
+        <p><input type="text" id="visaNumber" name="visaNumber"></p>
+       
+        <label for="visaNumber">Регион</label>
+        <p><input type="text" id="visaNumber" name="visaNumber"></p>
+       
+        <label for="visaNumber">Индекс</label>
+        <p><input type="text" id="visaNumber" name="visaNumber"></p>
+       
+        <label for="visaNumber">Страна</label>
+        <p><input type="text" id="visaNumber" name="visaNumber"></p>
+        
+    </div>
+</div>
+
+<label for="visaNumber">Контактный телефон (сотовый):</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дополнительный телефон (по желанию)</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Рабочий телефон (по желанию)</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<div id = "checkGroupAdd">
+    <p><label for="visaRefusal">Вы использовали какие-нибудь другие номера за последние пять лет?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    <p><div id="reasonOfRefusalVisa"style="display: none">
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+        
+        <button type="button" id="add_person" onclick="addPerson()">+</button>
+    </div></p>
+</div>
+
+<label for="visaNumber">Email адрес:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<div id = "checkGroupAdd">
+    <p><label for="visaRefusal">Вы использовали какие-нибудь другие Email адреса за последние пять лет?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    <p><div id="reasonOfRefusalVisa"style="display: none">
+        <label for="reasonOfRefusal">Укажите эти номера/Email</label>
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+        
+        <button type="button" id="add_person" onclick="addPerson()">+</button>
+    </div></p>
+</div>
+
+<p><div>
+    <label for="reasonOfRefusal">Укажите ссылки на ваши аккаунты во всех социальных сетях, где вы зарегистрированы:</label>
+    <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+        
+    <button type="button" id="add_person" onclick="addPerson()">+</button>
+</div></p>
+
+<div id = "checkGroup">
+    <p><label for="visaRefusal">Хотите ли вы предоставить дополнительную информацию, где вы зарегистрированы,
+            где присутствует ваши данные, фото, видео и любой другой контент, который вы создавали?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    <p><div id="reasonOfRefusalVisa"style="display: none">
+        <label for="reasonOfRefusal">Ссылка на социальную сеть:</label>
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+        <button type="button" id="add_person" onclick="addPerson()">+</button>
+    
+        <label for="reasonOfRefusal">Ссылка на аккаунт:</label>
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+    </div></p>
 </div>
 
 
+<H2>Информация о паспорте</H2>
 
+<label>Тип вашего паспорта:
+    <select name="person_relation[]">
+        <option value="0">обычный</option>
+        <option value="1">официальный</option>
+        <option value="2">дипломатический</option>
+    </select>
+</label>
+
+<label for="visaNumber">Серия и номер слитно, без пробелов</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Страна выдачи паспорта:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Регион выдачи паспорта:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Город выдачи паспорта:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата выдачи паспорта:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата окончания действия паспорта:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<p><label for="visaRefusal">Теряли ли вы паспорт или крали у вас паспорт ранее?</label>
+    <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+
+<H2>Информация о приглашающей стороне</H2>
+
+<div id = "checkGroup">
+    <p><label for="visaRefusal">Если вы летите по приглашению человека?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
     
+    <p><div id="reasonOfRefusalVisa"style="display: none">
+        <label for="reasonOfRefusal">Его фамилия:</label>
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+    
+        <label for="reasonOfRefusal">Его имя:</label>
+        <p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+    </div></p>
+</div>
+
+<label for="visaNumber">Название принимающей организации или отеля: (ответ обязателен)</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label>Отношение к вам(Если это отель - вариант "другие"): 
+    <select name="person_relation[]">
+        <option value="0">родственник</option>
+        <option value="1">супруг</option>
+        <option value="2">друг</option>
+        <option value="3">деловой партнер</option>
+        <option value="0">работодатель</option>
+        <option value="1">обучение</option>
+        <option value="2">другое</option>
+    </select>
+</label>
+
+<h3>Адрес отеля или организации:</h3>
+
+<label for="visaNumber">Номер дома и улица:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Город</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Штат:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Индекс:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Номер телефона:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Email-адрес, если известен</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<H2>Информация о членах семьи</H2>
+
+<h3>Указываем данные родителей, даже если уже кого-то нет живых. 
+    Если вы не знакомы с родителем - напишите это в строке фамилия</h3>
+
+<label for="visaNumber">Фамилия отца:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Имя отца:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата рождения отца:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<div id = "checkGroupSelect">
+    <p><label for="visaRefusal">Является ли ваш отец гражданином США или находится там?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    <div id ='fatherSitizenUSA' style="display: none">
+        <select name="person_relation[]">
+                <option value="0">Гражданин США</option>
+                <option value="1">Имеет вид на жительство</option>
+                <option value="2">неиммиграционный статус</option>
+                <option value="3">другое</option>
+            </select>
+    </div>
+    
+</div>    
+
+<label for="visaNumber">Фамилия матери:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Имя матери:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата рождения матери:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<div id = "checkGroupSelect">
+    <p><label for="visaRefusal">Является ли ваша мать гражданином США или находится там?</label>
+        <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+    
+    <div id ='motherSitizenUSA' style="display: none">
+            <select name="person_relation[]">
+                    <option value="0">Гражданин США</option>
+                    <option value="1">Имеет вид на жительство</option>
+                    <option value="2">неиммиграционный статус</option>
+                    <option value="3">другое</option>
+                </select>
+        </div>
+    
+</div>    
+
+<H2>Супруг</H2>
+
+<label for="visaNumber">Фамилия супруга:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Имя супруги:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата рождения:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Страна рождения (национальность): </label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">НГород рождения:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label>Адрес супруга:
+    <select name="person_relation[]">
+        <option value="0">другое</option>
+        <option value="1">неизвестен</option>
+        <option value="2">как адрес кортакта в США</option>
+        <option value="3">как ваш почтовый</option>
+        <option value="4">как ваш домашний</option>
+    </select>
+</label>
+
+<H2>Информация о работе и учебе</H2>
+
+<label>Сфера деятельности(выберите вариант):
+    <select name="person_relation[]">
+        <option value="0">другое</option>
+        <option value="1">студент</option>
+        <option value="2">социальная сфера</option>
+        <option value="3">пенсионер</option>
+        <option value="4">научный сотрудник</option>
+        <option value="5">религиозная дейтельность</option>
+        <option value="6">спорт</option>
+        <option value="7">безработный</option>
+        <option value="8">естественные науки</option>
+        <option value="9">воинская служба</option>
+        <option value="10">здравоохранение</option>
+        <option value="11">юрист</option>
+        <option value="12">работа на дому</option>
+        <option value="13">госслужба</option>
+        <option value="14">инженерия</option>
+        <option value="15">образование</option>
+        <option value="16">сфера общепита</option>
+        <option value="17">IT сфера</option>
+        <option value="18">коммуникации</option>
+        <option value="19">бизнес</option>
+        <option value="20">какой-то другой исполнитель</option>
+        <option value="21">артист</option>
+        <option value="22">сельское хозяйство</option>
+    </select>
+</label>
+
+<label for="visaNumber">Название организации:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<h3>Адрес:</h3>
+
+<label for="visaNumber">Улица, дом, строение и тд:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Город:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Город:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Регион:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Индекс:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Рабочий телефон:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Дата начала работы:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Ежемесячный доход в местной валюте:</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+<label for="visaNumber">Занимаемая должность (в свободной форме):</label>
+<p><input type="text" id="visaNumber" name="visaNumber"></p>
+
+ТУТ ДОДЕЛАТИ
+
+<H2>Дополнительная информация о подготовке</H2>
+
+<label for="reasonOfRefusal">Какими языками вы владеете:</label>
+<p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+<button type="button" id="add_person" onclick="addPerson()">+</button>
+
+<label for="reasonOfRefusal">Перечислите все страны, которые вы посещали за последние пять лет:</label>
+<p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+<button type="button" id="add_person" onclick="addPerson()">+</button>
+
+<label for="reasonOfRefusal">Принадлежали ли вы к какой-либо профессиональной, социальной или благотворительной организации,
+    вносили ли в нее свой вклад или работали в ней? Напишите название</label>
+<p><input type="text" id="reasonOfRefusal" name="reasonOfRefusal"></p>
+
+<p><label for="visaRefusal">Есть ли у вас какие-либо специальные навыки или подготовка, такие как огнестрельное оружие,
+        взрывчатые вещества, ядерный, биологический или химический опыт?</label>
+    <input type="checkbox" id="visaRefusal" name="visaRefusal" onchange="showReasonOfRefusal"></p>
+
+<div id = "checkGroup">
+    <p><label for="army">Служили в армии?</label>
+        <input type="checkbox" id="army" name="army" onchange="showReasonOfRefusal"></p>
+    
+    <p><div id="army"style="display: none">
+        <label for="armyCountry">Страна:</label>
+        <p><input type="text" id="armyCountry" name="armyCountry"></p>
+        
+        <label for="armyDivision">Подразделение:</label>
+        <p><input type="text" id="armyDivision" name="armyDivision"></p>
+        
+        <label for="armyRang">Ранг::</label>
+        <p><input type="text" id="armyRang" name="armyRang"></p>
+    
+        <label for="armySpecialty">Специальность:</label>
+        <p><input type="text" id="armySpecialty" name="armySpecialty"></p>
+    
+        <label for="armyStartDate">Дата начала службы:</label>
+        <p><input type="text" id="armyStartDate" name="armyStartDate"></p>
+    
+        <label for="armyEndDate">Дата окончания службы:</label>
+        <p><input type="text" id="armyEndDate" name="armyEndDate"></p>
+    </div></p>
+</div>  
+
+<p><label for="specGroup">Вы когда-либо служили, были членом или были связаны с военизированным подразделением,
+        отрядом бдительности, повстанческой группой, партизанской группой или повстанческой организацией?</label>
+    <input type="checkbox" id="specGroup" name="specGroup" onchange="showReasonOfRefusal"></p>
+
         
 
 
