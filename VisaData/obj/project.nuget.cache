@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KWkn5b3oyz61rAiHJo+ecWNWjTvew1lIm/7AAgiQKZqT7Ka9baZuCvqTJSBp5CWn1kxgDt5cogpgw2Yiyf9Pvg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\slash\\source\\repos\\VisaData\\VisaData\\VisaData.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\slash\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

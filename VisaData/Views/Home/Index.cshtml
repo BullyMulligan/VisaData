@@ -1,0 +1,269 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebApplication1.Pages.Home.IndexModel
+
+
+<dir><h1>Заполните все поля анкеты</h1></dir>
+
+<form method="post" asp-controller="Home" asp-action="SaveData">
+    <h2>Личные данные</h2>
+    <dir class="form-group">
+        <label for="name">ФИО заполнителя(На родном языке):</label>
+        <p><input type="text" id="name" name="name"/></p>
+    </dir>
+
+    <dir class="form-group">
+        <label for="secondName">Использовали ли вы когда-нибудь другие имена?<br> (Девичья фамилия, псевдоним, профессиональное имя)Укажите это имя.:</label>
+        <p><input type="text" id="secondName" name="secondName"/></p>
+    
+
+        <div class="form-group">
+            <label>Семейное положение:</label>
+            <p><select name="marital_status">
+                <option value=0>Женат/замужем</option>
+                <option value=1>Гражданский брак</option>
+                <option value=2>Холост</option>
+                <option value=3>Вдовец/вдова</option>
+                <option value=4>В разводе</option>
+                <option value=5>Официально не живете вместе</option>
+                <option value=6>Другое</option>
+            </select></p>
+        </div>
+    </dir>
+    
+    <h2>Данные о рождении</h2>
+    
+    <dir class="form-group">
+        <label for="year">Год рождения:</label>
+        <p><input type="number" id="year" name="year"/></p>
+        <label for="month">Месяц рождения:</label>
+        <p><input type="number" id="month" name="month"/></p>
+        <label for="day">День рождения:</label>
+        <p><input type="number" id="day" name="day"/></p>
+        
+        <label for="birthSity">Город рождения:</label>
+        <p><input type="text" id="birthSity" name="birthSity"/></p>
+        
+        <label for="birthCountry">Страна рождения:</label>
+        <p><input type="text" id="birthCountry" name="birthCountry"/></p>
+    </dir>
+    
+    <h2>Гражданство</h2>
+    
+    <div class="form-group">
+        <div>
+            <label for="citizenship">Гражданство:</label>
+            <p><input type="text" id="citizenship" name="citizenship"/></p>
+
+
+            <div class="form-group">
+                <input type="checkbox" id="hasOtherCitizenship" name="hasOtherCitizenship" value="true" onchange="toggleOtherCitizenshipFields()"/>
+                <label for="hasOtherCitizenship">Имеете ли вы гражданство в другой стране?</label>
+            </div>
+
+            <div id="otherCitizenshipFields" style="display: none;">
+                <div class="form-group">
+                    <input type="checkbox" id="hasOtherCountryPassport" name="hasOtherCountryPassport" value="true" onchange="toggleOtherCountryPassportField()"/>
+                    <label for="hasOtherCountryPassport">Имеете ли вы паспорт этой страны?</label>
+                </div>
+
+                <div id="otherCountryPassportField" style="display: none;">
+                    <div class="form-group">
+                        <label for="otherCountryPassportNumber">Номер паспорта данной страны:</label>
+                        <p><input type="text" id="otherCountryPassportNumber" name="otherCountryPassportNumber"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="checkbox" id="isPermanentResident" name="isPermanentResident" value="true" onchange="toggleResidenceCountryField()"/>
+        <label for="isPermanentResident">Являетесь ли вы постоянным жителем страны, отличающейся от той, которую вы указали в гражданстве?</label>
+    </div>
+
+    <div id="residenceCountryField" style="display: none;">
+        <div class="form-group">
+            <label for="residenceCountry">В какой стране вы проживаете?</label>
+            <p><input type="text" id="residenceCountry" name="residenceCountry"/></p>
+        </div>
+    </div>
+    
+    
+    <h2>Пребывание в Америке</h2>
+    <div class="form-group">
+        
+      
+        <label>
+            <div class="form-group">
+                <input type="checkbox" name="visited_usa"> Были ли вы в США ранее?
+            </div>
+        </label>
+        <div id="usa-fields" style="display:none;">
+            <div class="form-group">
+                <label> Национальный идентификационный номер:</label>
+                <p><input type="text" name="national_id"></p>
+               
+                
+                <label>Номер социального страхования:</label>
+                <p><input type="text" name="social_security_number"></p>
+                
+                <label>Номер налогоплательщика:</label>
+                <p> <input type="text" name="taxpayer_number"></p>
+                    
+            </div>
+        </div>
+    </div>
+    
+    <h2>Информация о поездке</h2>
+    <div class="form-group">
+        <dir class="form-group">
+            <div class="form-group">
+                <label>Цель поездки в США.Выберите тип визы:</label>
+                <p><select id="visaType" name="visaType">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select></p>
+                <div id="visaTypeB" style="display:none;">
+                    <label>Выберите вид визы:</label>
+                    <p><select name="visaTypeB">
+                        <option value="0">Бизнес или конференция</option>
+                        <option value="1">Туристическая или медицинская</option>
+                        <option value="2">Бизнес и туризм</option>
+                    </select></p>
+                </div>
+                <label>
+                    <input type="checkbox" name="travelPurposeCheckbox" id="travelPurposeCheckbox">
+                    Есть ли у вас цель поездки?
+                </label>
+                
+                <div id="travelPurposeInput" style="display:none;">
+                    <p><input type="text" name="travelPurpose"></p>
+                </div>
+                <div><label for="arrivalDate">Приблизительная дата прилета:</label><br>
+                    <input type="text" id="arrivalDate" name="arrivalDate"><br>
+                                     
+                    <label for="arrivalCity">Город аэропорта прилета:</label><br>
+                    <input type="text" id="arrivalCity" name="arrivalCity"><br>
+                                     
+                    <label for="departureDate">Приблизительная дата вылета:</label><br>
+                    <input type="text" id="departureDate" name="departureDate"><br>
+                                     
+                    <label for="departureCity">Город аэропорта вылета:</label><br>
+                    <input type="text" id="departureCity" name="departureCity"><br></div>
+                <label for="places">Места, которые вы хотите посетить (5-8 названий туристических мест) *важно знать ответ для консула</label>
+                <div id="places-container">
+                    <div>
+                        <input type="text" name="place1" id="place1" required>
+                        <button type="button" class="add-btn">+</button>
+                    </div>
+                </div>
+                
+            </div>
+        </dir>
+    </div>
+
+
+    <button type="submit">Start</button>
+</form>
+
+
+<script>
+
+    //*****************************функции, отвечающие за появление полей при чекбоксах********************************
+    function toggleOtherCitizenshipFields() {
+        var otherCitizenshipFields = document.getElementById("otherCitizenshipFields");
+        if (document.getElementById("hasOtherCitizenship").checked) {
+            otherCitizenshipFields.style.display = "block";
+        } else {
+            otherCitizenshipFields.style.display = "none";
+            document.getElementById("hasOtherCountryPassport").checked = false;
+            toggleOtherCountryPassportField();
+        }
+    }
+
+    function toggleOtherCountryPassportField() {
+        var otherCountryPassportField = document.getElementById("otherCountryPassportField");
+        if (document.getElementById("hasOtherCountryPassport").checked) {
+            otherCountryPassportField.style.display = "block";
+        } else {
+            otherCountryPassportField.style.display = "none";
+            document.getElementById("otherCountryPassportNumber").value = "";
+        }
+    }
+
+    function toggleResidenceCountryField() {
+        var residenceCountryField = document.getElementById("residenceCountryField");
+        if (document.getElementById("isPermanentResident").checked) {
+            residenceCountryField.style.display = "block";
+        }else{
+            residenceCountryField.style.display = "none";
+            document.getElementById("residenceCountryField").value = "";
+        }
+    }
+    //*********************************************************************************************************
+    
+    //********************Далее идет появление пунктов о пребывании в Америке**********************************
+    var visitedCheckbox = document.querySelector('input[name="visited_usa"]');
+      var usaFieldsDiv = document.querySelector('#usa-fields');
+      visitedCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          usaFieldsDiv.style.display = 'block';
+        } else {
+          usaFieldsDiv.style.display = 'none';
+        }
+      });
+    //*********************************************************************************************************
+    
+    //****************Доделать выпадающие спискию Внизу часть с информацией о поездке**************************
+    var visaType = document.getElementById("visaType");
+        var visaTypeB = document.getElementById("visaTypeB");
+    
+        visaType.addEventListener("change", function() {
+            if (visaType.value == "B") {
+                visaTypeB.style.display = "block";
+            } else {
+                visaTypeB.style.display = "none";
+            }
+        });
+        var travelPurposeCheckbox = document.getElementById("travelPurposeCheckbox");
+        var travelPurposeInput = document.getElementById("travelPurposeInput");
+        
+        travelPurposeCheckbox.addEventListener("change", function() {
+          if (travelPurposeCheckbox.checked) {
+            travelPurposeInput.style.display = "block";
+          } else {
+            travelPurposeInput.style.display = "none";
+          }
+        });
+    //*********************************************************************************************************
+    
+    //********************************Места, которые надо посетить*********************************************
+    const placesContainer = document.querySelector("#places-container");
+      const addBtns = document.querySelectorAll(".add-btn");
+      
+      let count = 1;
+      
+      addBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          count++;
+          const newPlace = document.createElement("div");
+          newPlace.innerHTML = `
+            <input type="text" name="place${count}" id="place${count}" required>
+            <button type="button" class="remove-btn">-</button>
+          `;
+          placesContainer.appendChild(newPlace);
+          
+          const removeBtn = newPlace.querySelector(".remove-btn");
+          removeBtn.addEventListener("click", () => {
+            newPlace.remove();
+            count--;
+          });
+        });
+      });
+    </script>
