@@ -15,33 +15,33 @@ namespace MyWebApplication.Controllers
             return View();
         }
 
+        
+        
         [HttpPost]
-        public IActionResult SaveData(string name, string secondName, int marital_status,int year,int month,int day,
-            string birthSity,string birthCountry,string citizenship,bool hasOtherCitizenship,bool hasOtherCountryPassport,
-            string otherCountryPassportNumber,bool isPermanentResident,string residenceCountry)
+       
+        public IActionResult DownloadFile(MyData myData,string full_name)
         {
-            ShareString(name);
-            _myData.second_name = secondName;
-            _myData.marital_status = marital_status;
-            _myData.birth_date = new MyData.BirthDate(day, month, year);
-            _myData.birth_sity = birthSity;
-            _myData.birth_country = birthCountry;
-            _myData.sitizenship = new MyData.Sitizenship(citizenship, hasOtherCitizenship, hasOtherCountryPassport,
-                otherCountryPassportNumber, isPermanentResident, residenceCountry);
-            _myData.sitizenship.second_sitizenship = hasOtherCitizenship;
+            ShareString(full_name,myData);
+            if (_myData == null)
+            {
+                return BadRequest("Person data is empty");
+            }
 
-            var jsonString = JsonConvert.SerializeObject(_myData);
+            // Serialize person data to JSON
+            var json = JsonConvert.SerializeObject(myData);
             var fileName = "data.json";
-            var fileBytes = Encoding.UTF8.GetBytes(jsonString);
 
+            var fileBytes = Encoding.UTF8.GetBytes(json);
+
+            // Download file
             return File(fileBytes, "application/json", fileName);
         }
         
-        private void ShareString(string fullName)
+        private void ShareString(string fullName,MyData myData)
         {
             string[] names = fullName.Split(' '); // Разделение строки по пробелам
             MyData.FullName fullNames = new MyData.FullName(names[0], names[1], names[2]);
-            _myData.full_name = fullNames;
+            myData.full_name = fullNames;
         }
 
         public IActionResult Privacy()
