@@ -1,5 +1,6 @@
 ﻿public class MyData
 {
+    public string unique_id { get; set; }
     public FullName full_name { get; set; }
     public string second_name { get; set; }
     public int marital_status { get; set; }
