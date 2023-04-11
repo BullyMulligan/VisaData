@@ -8,97 +8,105 @@
 <h2>Личные данные</h2>
 
 <form method="Post" asp-controller="Home" asp-action="DownloadFile">
-    <div style="display: flex; flex-wrap: wrap;">
-        <div><label for="full_name">Фамилия Имя Отчество:</label><br/>
-            <input type="text" id="full_name" name="full_name" style="margin-right: 10px;"></div>
+<div style="display: flex; flex-wrap: wrap;">
+    <div><label for="full_name">Фамилия Имя Отчество:</label><br/>
+        <input type="text" id="full_name" name="full_name" style="margin-right: 10px;"></div>
         
-        <div><label>Семейное положение:</label><br/>
-            <p><select name="myData.marital_status" >
-                <option value=0>Женат/замужем</option>
-                <option value=1>Гражданский брак</option>
-                <option value=2>Холост</option>
-                <option value=3>Вдовец/вдова</option>
-                <option value=4>В разводе</option>
-                <option value=5>Официально не живете вместе</option>
-                <option value=6>Другое</option>
-            </select></p></div>
-        <div><label for="secondName">Девичья фамилия, псевдоним, профессиональное имя:</label><br/>
-            <input type="text" id="secondName" name="myData.second_name" style="margin-left: 10px;"/></div>
-    </div>
-    <div style="display: flex; flex-wrap: wrap;">
-        <div><label for="birthDate">Дата рождения:</label><br/>
-            <input type="date" id="birthDate" name="myData.birth_date" style="margin-right: 10px;"></div>
-        <div><label for="birhtCoutry">Страна рождения:</label><br/>
-            <input type="text" id="birhtCoutry" name="myData.birth_country" style="margin-right: 10px;"></div>
-        <div><label for="birthCity">Город рождения:</label><br/>
-            <input type="test" id="birthCity" name="myData.birth_sity" style="margin-right: 10px;"></div>
-    </div>
+    <div><label>Семейное положение:</label><br/>
+        <p><select name="myData.marital_status" >
+            <option value=1>Женат/замужем</option>
+            <option value=2>Гражданский брак</option>
+            <option value=4>Холост</option>
+            <option value=5>Вдовец/вдова</option>
+            <option value=6>В разводе</option>
+            <option value=7>Официально не живете вместе</option>
+            <option value=8>Другое</option>
+        </select></p></div>
+    <div><label for="secondName">Девичья фамилия, псевдоним, профессиональное имя:</label><br/>
+        <input type="text" id="secondName" name="myData.second_name" style="margin-left: 10px;"/></div>
+</div>
+<div style="display: flex; flex-wrap: wrap;">
+    <div><label for="birthDate">Дата рождения:</label><br/>
+        <input type="date" id="birthDate" name="myData.birth_date" style="margin-right: 10px;"></div>
+    <div><label for="birhtCoutry">Страна рождения:</label><br/>
+        <input type="text" id="birhtCoutry" name="myData.birth_country" style="margin-right: 10px;"></div>
+    <div><label for="birthCity">Город рождения:</label><br/>
+        <input type="test" id="birthCity" name="myData.birth_sity" style="margin-right: 10px;"></div>
+</div>
+<div><label>Пол:</label><br/>
+    <p><select name="myData.sex" >
+        <option value=1>Мужской</option>
+        <option value=2>Женский</option>
+    </select></p></div>
    
 
  
 
 
 
-    <h2>Гражданство</h2>
+<h2>Гражданство</h2>
+<div>
+    <label for="citizenship">Гражданство:</label>
+    <p><input type="text" id="citizenship" name="myData.sitizenship.sitizenship"/></p>
+
+
     <div>
-        <label for="citizenship">Гражданство:</label>
-        <p><input type="text" id="citizenship" name="myData.sitizenship.sitizenship"/></p>
-
-
-        <div>
-            <input type="checkbox" id="hasOtherCitizenship" name="myData.sitizenship.second_sitizenship"  onchange="showBlock(otherCitizenshipFields,id)"/>
-            <label for="hasOtherCitizenship">Имеете ли вы гражданство в другой стране?</label>
-        </div>
-
-        <div id="otherCitizenshipFields" style="display: none;">
-            <div class="form-group">
-                <input type="checkbox" id="hasOtherCountryPassport" name="myData.sitizenship.second_passport_availability"  onchange="showBlock(otherCountryPassportField,id)"/>
-                <label for="hasOtherCountryPassport">Имеете ли вы паспорт этой страны?</label>
-            </div>
-
-            <div id="otherCountryPassportField" style="display: none;">
-                <div class="form-group">
-                    <label for="otherCountryPassportNumber">Номер паспорта данной страны:</label>
-                    <p><input type="text" id="otherCountryPassportNumber" name="myData.sitizenship.number_second_passport"/></p>
-                </div>
-            </div>
-        </div>
-        <input type="checkbox" id="isPermanentResident" name="myData.sitizenship.permanent_resident"  onchange="showBlock(residenceCountryField,id)"/>
-        <label for="isPermanentResident">Являетесь ли вы постоянным жителем страны,<br/> отличающейся от той, которую вы указали в гражданстве?</label>
-    
-        <div id="residenceCountryField" style="display: none;">
-            <div class="form-group">
-                <label for="residenceCountry">В какой стране вы проживаете?</label>
-                <p><input type="text" id="residenceCountry" name="myData.sitizenship.second_country"/></p>
-            </div>
-        </div>
-    
+        <input type="checkbox" id="hasOtherCitizenship" name="myData.sitizenship.second_sitizenship"  onchange="showBlock(otherCitizenshipFields,id)"/>
+        <label for="hasOtherCitizenship">Имеете ли вы гражданство в другой стране?</label>
     </div>
 
-
-
-    <h2>Пребывание в Америке</h2>
-
-    <label>
+    <div id="otherCitizenshipFields" style="display: none;">
         <div class="form-group">
-            <input type="checkbox" id="visitedUsa" name="visitedUsa"  onchange="showBlock(usaFields,id)"> Были ли вы в США ранее?
+            <label for="otherCountryPassportNumber">Название этой страны:</label>
+            <p><input type="text" id="otherCountryPassportNumber" name="myData.sitizenship.second_sitizen_country"/></p>
+            <input type="checkbox" id="hasOtherCountryPassport" name="myData.sitizenship.second_passport_availability" onchange="showBlock(otherCountryPassportField,id)"/>
+            <label for="hasOtherCountryPassport">Имеете ли вы паспорт этой страны?</label>
         </div>
-    </label>
-    <div id="usaFields" style="display:none;">
-        <div class="form-group" style="display: flex; flex-wrap: wrap;">
-            <div><label style="margin-right: 10px;"> Национальный <br/>идентификационный номер:</label><br/>
-                <input type="text" id ="nationalId" name="myData.stay_in_usa.national_identification_number"style="margin-right: 10px;"></div>
+
+        <div id="otherCountryPassportField" style="display: none;">
+            <div class="form-group">
+                <label for="otherCountryPassportNumber">Номер паспорта данной страны:</label>
+                <p><input type="text" id="otherCountryPassportNumber" name="myData.sitizenship.number_second_passport"/></p>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" id="isPermanentResident" name="myData.sitizenship.permanent_resident"  onchange="showBlock(residenceCountryField,id)"/>
+    <label for="isPermanentResident">Являетесь ли вы постоянным жителем страны,<br/> отличающейся от той, которую вы указали в гражданстве?</label>
+    
+    <div id="residenceCountryField" style="display: none;">
+        <div class="form-group">
+            <label for="residenceCountry">В какой стране вы проживаете?</label>
+            <p><input type="text" id="residenceCountry" name="myData.sitizenship.second_country"/></p>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<h2>Пребывание в Америке</h2>
+
+<label>
+    <div class="form-group">
+        <input type="checkbox" id="visitedUsa" name="visitedUsa"  onchange="showBlock(usaFields,id)"> Были ли вы в США ранее?
+    </div>
+</label>
+<div id="usaFields" style="display:none;">
+    <div class="form-group" style="display: flex; flex-wrap: wrap;">
+        
+        <div><label style="margin-right: 10px;"> Национальный <br/>идентификационный номер:</label><br/>
+            <input type="text" id ="nationalId" name="myData.stay_in_usa.national_identification_number"style="margin-right: 10px;"></div>
                
                 
-            <div><label style="margin-right: 10px;">Номер социального <br/> страхования:</label><br/>
-                <input type="text" id="socialSecurityNumber" name="myData.stay_in_usa.social_security_number"style="margin-right: 10px;"></div>
+        <div><label style="margin-right: 10px;">Номер социального <br/> страхования:</label><br/>
+            <input type="text" id="socialSecurityNumber" name="myData.stay_in_usa.social_security_number"style="margin-right: 10px;"></div>
                 
-            <div><label style="margin-right: 10px;">Номер <br/> налогоплательщика:</label><br/>
-                <input type="text" id="taxpayerNumber" name="myData.stay_in_usa.taxpayer_number"style="margin-right: 10px;"></div>
+        <div><label style="margin-right: 10px;">Номер <br/> налогоплательщика:</label><br/>
+            <input type="text" id="taxpayerNumber" name="myData.stay_in_usa.taxpayer_number"style="margin-right: 10px;"></div>
                     
-        </div>
-      
     </div>
+      
+</div>
 
 
 
@@ -106,122 +114,123 @@
 
 
 
-    <h2>Информация о поездке</h2>
+<h2>Информация о поездке</h2>
 
-    <div style="display: flex;flex-wrap: wrap;"><div style="margin-right: 50px"><label style="margin-right: 10px">Цель поездки в США.<br/>Выберите тип визы:</label>
-            <select  id="visaType" name="myData.info_about_travel.visa_char" onchange="showOneOfUs(id)">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                <option value="G">G</option>
-            </select></div>
+<div style="display: flex;flex-wrap: wrap;"><div style="margin-right: 50px"><label style="margin-right: 10px">Цель поездки в США.<br/>Выберите тип визы:</label>
+        <select  id="visaType" name="myData.info_about_travel.visa_char" onchange="showOneOfUs(id)">
+            <option value=1>A</option>
+            <option value=2>B</option>
+            <option value=3>C</option>
+            <option value=4>D</option>
+            <option value=5>E</option>
+            <option value=6>F</option>
+            <option value=7>G</option>
+        </select></div>
 
-        <div id="visaTypeB" style="display:none;">
-            <label>Выберите вид визы:</label>
-            <p><select name="myData.info_about_travel.visa_type">
-                <option value="0">Бизнес или конференция</option>
-                <option value="1">Туристическая или медицинская</option>
-                <option value="2">Бизнес и туризм</option>
-            </select></p>
-        </div>
+    <div id="visaTypeB" style="display:none;">
+        <label>Выберите вид визы:</label>
+        <p><select name="myData.info_about_travel.visa_type">
+            <option value=1>Бизнес или конференция</option>
+            <option value=2>Туристическая или медицинская</option>
+            <option value=3>Бизнес и туризм</option>
+        </select></p>
     </div>
-    <label>
-        <input type="checkbox" name="travelPurposeCheckbox" id="travelPurposeCheckbox" onchange="showBlock(travelPurposeInput,id)">
-        Есть ли у вас цель поездки?
-    </label>
+</div>
+<label>
+    <input type="checkbox" name="travelPurposeCheckbox" id="travelPurposeCheckbox" onchange="showBlock(travelPurposeInput,id)">
+    Есть ли у вас цель поездки?
+</label>
                 
-    <div id="travelPurposeInput" style="display:none;">
-        <p><input type="text" name="myData.info_about_travel.travel_goal"></p>
-    </div>
+<div id="travelPurposeInput" style="display:none;">
+    <p><input type="text" name="myData.info_about_travel.travel_goal"></p>
+</div>
 
-    <div style="display: flex;flex-wrap: wrap;">
-        <div style="margin-right: 10px"><label for="arrivalDate">Приблизительная дата прилета:</label><br>
-            <input style="margin-left: 50px" type="date" id="arrivalDate" name="myData.info_about_travel.arrival_date"></div>
+<div style="display: flex;flex-wrap: wrap;">
+    <div style="margin-right: 10px"><label for="arrivalDate">Приблизительная дата прилета:</label><br>
+        <input style="margin-left: 50px" type="date" id="arrivalDate" name="myData.info_about_travel.arrival_date"></div>
                                      
-        <div style="margin-right: 10px"><label for="arrivalCity">Город аэропорта прилета:</label><br>
-            <input type="text" id="arrivalCity" name="myData.info_about_travel.arrival_city"></div>
+    <div style="margin-right: 10px"><label for="arrivalCity">Город аэропорта прилета:</label><br>
+        <input type="text" id="arrivalCity" name="myData.info_about_travel.arrival_city"></div>
                                      
-        <div style="margin-right: 10px"> <label for="departureDate">Приблизительная дата вылета:</label><br>
-            <input style="margin-left: 50px" type="date" id="departureDate" name="myData.info_about_travel.departure_date"></div>
+    <div style="margin-right: 10px"> <label for="departureDate">Приблизительная дата вылета:</label><br>
+        <input style="margin-left: 50px" type="date" id="departureDate" name="myData.info_about_travel.departure_date"></div>
                                      
-        <div style="margin-right: 10px"> <label for="departureCity">Город аэропорта вылета:</label><br>
-            <input type="text" id="departureCity" name="myData.info_about_travel.departure_city"></div>
-    </div>
+    <div style="margin-right: 10px"> <label for="departureCity">Город аэропорта вылета:</label><br>
+        <input type="text" id="departureCity" name="myData.info_about_travel.departure_city"></div>
+</div>
 
-    <label for="places">Места, которые вы хотите посетить (5-8 названий туристических мест) 
-        *важно знать ответ для консула</label>
+<label for="places">Места, которые вы хотите посетить (5-8 названий туристических мест) 
+    *важно знать ответ для консула</label>
 
-    <div style ="display:flex;flex-wrap: wrap;" id="placesСontainer">
-        <div style="margin-right: 10px;margin-bottom: 10px">
-            <input type="text" name="myData.info_about_travel.travel_places" id="place" required>
-            <button type="button" class="add-btn" onclick="addField('place','placesСontainer')">+</button>
-        </div>
+<div style ="display:flex;flex-wrap: wrap;" id="placesСontainer">
+    <div style="margin-right: 10px;margin-bottom: 10px">
+        <input type="text" name="myData.info_about_travel.travel_places" id="place" required>
+        <button type="button" class="add-btn" onclick="addField('place','placesСontainer')">+</button>
     </div>
-    <label for="hotelAdress">Адрес, где вы остановитесь в США (адрес с индексом,
-        номер телефона без пробелов предполагаемого отеля)</label><br>
+</div>
+<label for="hotelAdress">Адрес, где вы остановитесь в США (адрес с индексом,
+    номер телефона без пробелов предполагаемого отеля)</label><br>
 <div style="margin-right: 50px">
        
-        <label for="hotelStreet">Улица, дом, квартира:</label>
-        <p><input type="text" id="hotelStreet" name="myData.info_about_travel.stop_address.street"></p>
+    <label for="hotelStreet">Улица, дом, квартира:</label>
+    <p><input type="text" id="hotelStreet" name="myData.info_about_travel.stop_address.street"></p>
 
-        <label for="hotelCity">Город:</label>
-        <p><input type="text" id="hotelCity" name="myData.info_about_travel.stop_address.city"></p>
+    <label for="hotelCity">Город:</label>
+    <p><input type="text" id="hotelCity" name="myData.info_about_travel.stop_address.city"></p>
 
-        <label for="hotelRegion">Регион:</label>
-        <p><input type="text" id="hotelRegion" name="myData.info_about_travel.stop_address.region"></p>
+    <label for="hotelRegion">Регион:</label>
+    <p><input type="text" id="hotelRegion" name="myData.info_about_travel.stop_address.region"></p>
 
-        <label for="hotelIndex">Индекс:</label>
-        <p><input type="text" id="hotelIndex" name="myData.info_about_travel.stop_address.index"></p>
+    <label for="hotelIndex">Индекс:</label>
+    <p><input type="text" id="hotelIndex" name="myData.info_about_travel.stop_address.index"></p>
 
-        <label for="hotelCountry">Страна:</label>
-    <p><input type="text" id="hotelCountry" name="myData.info_about_travel.stop_address.country"></p>
-        
-        <label for="hotelCountry">Номер телефона:</label>
-            <p><input type="text" id="hotelCountry" name="myData.info_about_travel.hotel_number"></p>
+    <label for="hotelCountry">Номер телефона:</label>
+    <p><input type="text" id="hotelCountry" name="myData.info_about_travel.hotel_number"></p>
 </div>
     
 
-    <label>Кто платит за вашу поездку:</label>
-    <p><select id="payer" name="myData.info_about_travel.payer">
-        <option value=0>сам</option>
-        <option value=1>другой человек</option>
-        <option value=2>нынешний работодатель</option>
-        <option value=3>работодатель в США</option>
-        <option value=4>другая компания или организация</option>
-    </select></p>
+<label>Кто платит за вашу поездку:</label>
+<p><select id="payer" name="myData.info_about_travel.payer">
+    <option value=1>сам</option>
+    <option value=2>другой человек</option>
+    <option value=3>нынешний работодатель</option>
+    <option value=4>работодатель в США</option>
+    <option value=5>другая компания или организация</option>
+</select></p>
 
-    <h2>Спутники</h2>
-    <label><input type="checkbox" id="companion" name="companion" onchange="showBlock(peopleFields,id)">
-        Другие люди путешествуют с вами?</label>
+<h2>Спутники</h2>
+<label><input type="checkbox" id="companion" name="companion" onchange="showBlock(peopleFields,id)">
+    Другие люди путешествуют с вами?</label>
     
-    <div id="peopleFields" style="display:none">
-        <label>
-            <input type="checkbox" onchange="emptyCheckBox(id)" name="myData.info_about_travel.have_group">
-            Вы путешествуете с организацией или группой?
-        </label>
-    
-        <div style ="display:flex;flex-wrap: wrap;" id="peopleContainer">
-             <div style="margin-right: 20px" id="peopleList" nsme="myData.companions[0]">
-                <label>Фамилия и имя:</label><br/>
-                <input type="text" name="myData.companions[0].name"><br/>
-                <label>Отношение:</label><br/>
-                <select name="myData.companions[0].status">
-                    <option value=0>Родитель</option>
-                    <option value=1>Ребенок</option>
-                    <option value=2>Супруг</option>
-                    <option value=3>Другой родственник</option>
-                    <option value=4>Друг</option>
-                    <option value=5>Деловой партнер</option>
-                </select>
-                <button type="button" id="add_person" onclick="cloneElement('peopleList', 'peopleContainer')">+</button>
-            </div>
-        </div>
-    
-    
+<div id="peopleFields" style="display:none">
+    <label>
+        <input type="checkbox" id="haveOrganization" onchange="showBlock(organizationName,id)" name="myData.info_about_travel.have_group">
+        Вы путешествуете с организацией или группой?
+    </label>
+    <div id="organizationName" style="display:none">
+        <label>Название группы:</label><br/>
+        <input type="text" name="myData.info_about_travel.group_name"><br/>
     </div>
+    
+    <div style ="display:flex;flex-wrap: wrap;" id="peopleContainer">
+        <div style="margin-right: 20px" id="peopleList" nsme="myData.companions[0]">
+            <label>Фамилия и имя:</label><br/>
+            <input type="text" name="myData.companions[0].name"><br/>
+            <label>Отношение:</label><br/>
+            <select name="myData.companions[0].status">
+                <option value=0>Родитель</option>
+                <option value=1>Ребенок</option>
+                <option value=2>Супруг</option>
+                <option value=3>Другой родственник</option>
+                <option value=4>Друг</option>
+                <option value=5>Деловой партнер</option>
+            </select>
+            <button type="button" id="add_person" onclick="cloneElement('peopleList', 'peopleContainer')">+</button>
+        </div>
+    </div>
+    
+    
+</div>
   
 
 <h2>Информация о посещении США</h2>
@@ -231,8 +240,23 @@
     <input type="checkbox" id="have_been_to_USA" name="myData.have_been_to_USA"  onchange="showBlock(driver_docBlock,id)">
         
     <div id="driver_docBlock" style="display: none;">
+        <div style="display: flex;flex-wrap: wrap">
+            <div style="margin-right: 10px;"><label > Введите дату <br/>пребытия:</label><br/>
+                <input type="date" id="date_arrival" name="myData.date_arrival"style="margin-right: 10px;"></div>
+            <div style="margin-right: 10px;"><label > Проведенное <br/>время:</label><br/>
+                <input type="number" id="time_arrival" name="myData.time_arrival"style="margin-right: 10px;"></div>
+            <div style="margin-right: 10px;"><label > Единица <br/>времени:</label><br/>
+                <select name="myData.unit_arrival">
+                    <option value=1>Год</option>
+                    <option value=2>Месяц</option>
+                    <option value=3>Неделя</option>
+                    <option value=4>День</option>
+                    <option value=5>Меньше 24 часов</option>
+                </select></div>
+        </div>
+                               
         <label for="us-license-check">Получали ли вы права в США?</label>
-        <input type="checkbox" id="us-license-check" name="myData.have_driver_doc"  onchange="showBlock(numberDocBlock,id)">
+        <input type="checkbox" id="us-license-check" name="myData.have_driver_doc" onchange="showBlock(numberDocBlock,id)">
     </div>
     <div id="numberDocBlock" style="display: none;">
         <label for="license-number">Номер водительского удостоверения:</label>
@@ -264,11 +288,23 @@
         <input type="checkbox" id="fingersPrints" onchange="emptyCheckBox(id)" name="myData.fingers_prints" ></p>
     
     <p><label for="cardLoss">Виза была потеряна или украдена?</label>
-        <input type="checkbox" id="cardLoss" onchange="emptyCheckBox(id)" name="myData.loss_visa" ></p>
+        <input type="checkbox" id="cardLoss" onchange="showBlock(loss_visa,id)" name="myData.loss_visa" ></p>
     
+    <div id="loss_visa" style="display: none">
+            <label for="yearLossVisa">Год, потери:</label>
+            <p><input type="number" id="yearLossVisa" name="myData.year_loss_visa"></p>
+        
+            <label for="loss_explain">Краткое объяснение:</label>
+            <p><input type="text" id="loss_explain" name="myData.loss_explain"></p>
+        </div>
     
     <p><label for="cancellationVisa">Виза была аннулирована?</label>
-        <input type="checkbox" id="cancellationVisa" onchange="emptyCheckBox(id)" name="myData.cancelled_visa" ></p>
+        <input type="checkbox" id="cancellationVisa" onchange="showBlock(cancel_visa,id)" name="myData.cancelled_visa" ></p>
+    
+    <div id="cancel_visa" style="display: none">
+        <label for="cancel_explain">Причина:</label>
+                <p><input type="text" id="cancel_explain" name="myData.cancel_explain"></p>
+            </div>
     
     <div id = "checkGroup">
         <p><label for="visaRefusal">Отказывали ли вам в визе США или во въезде в страну?</label>
@@ -283,7 +319,11 @@
     
     
     <p><label for="immigrationAttempt">Была ли когда-либо от вашего имени послана петиция в иммиграционный отдел (пытались ли вы иммигрировать)?<br/>(ответ да - если вы выиграли Грин кард и заполняли заявление, или если у вас была виза и вы подавали документы в США, чтобы легализоваться)  </label>
-        <input type="checkbox" id="immigrationAttempt" onchange="emptyCheckBox(id)" name="myData.greencard" ></p>
+        <input type="checkbox" id="immigrationAttempt" onchange="showBlock(imigration,id)" name="myData.greencard" ></p>
+    <div id="imigration" style="display: none">
+            <label for="imigration_explain">Напишите подробнее:</label>
+                    <p><input type="text" id="imigration_explain" name="myData.imigration_explain"></p>
+                </div>
     
 </div>
 <H2>Контактная информация</H2>
@@ -395,8 +435,31 @@
 <div id="otherSocialBlock"style="display: none">
     <div id="containerOfLinks"style="display: flex;flex-wrap: wrap">
         <div id="containerOtherSocial" style="margin-right: 10px">
-            <label for="linkSocial">Ссылка на социальную сеть:</label>
-            <p><input type="text" id="linkSocial" name="myData.public_links[0].linl_soc_web"></p>
+            <div style="margin-right: 10px;"><label > Единица <br/>времени:</label><br/>
+                            <select name="myData.public_links[0].linl_soc_web">
+                                <option selected="selected" value="ASKF">ASK.FM</option>
+                                <option value=1>DOUBAN</option>
+                                <option value=2>FACEBOOK</option>
+                                <option value=3>FLICKR</option>
+                                <option value=4>GOOGLE+</option>
+                                <option value=5>INSTAGRAM</option>
+                                <option value=6>LINKEDIN</option>
+                                <option value=7>MYSPACE</option>
+                                <option value=8>PINTEREST</option>
+                                <option value=9>QZONE (QQ)</option>
+                                <option value=10>REDDIT</option>
+                                <option value=11>SINA WEIBO</option>
+                                <option value=12>TENCENT WEIBO</option>
+                                <option value=13>TUMBLR</option>
+                                <option value=14>TWITTER</option>
+                                <option value=15>TWOO</option>
+                                <option value=16>VINE</option>
+                                <option value=17>VKONTAKTE (VK)</option>
+                                <option value=18>YOUKU</option>
+                                <option value=19>YOUTUBE</option>
+                                <option value=20>NONE</option>
+                            </select></div>
+            
             <label for="otherAccount">Ссылка на аккаунт:</label>
             <br/><input type="text" id="otherAccount" name="myData.public_links[0].link_to_account">
             <button style="margin-left: 5px" type="button" id="addOtherSocial" onclick="cloneElement('containerOtherSocial','containerOfLinks')">+</button>
@@ -412,9 +475,9 @@
     <div style="margin-right: 10px">
         <label>Тип вашего паспорта:</label><br/>
         <select name="myData.passport.passport_type">
-            <option value="0">обычный</option>
-            <option value="1">официальный</option>
-            <option value="2">дипломатический</option>
+            <option value=1>обычный</option>
+            <option value=2>официальный</option>
+            <option value=3>дипломатический</option>
         </select>
     </div>
 
@@ -455,8 +518,19 @@
 
 <div style="margin-right: 10px">
     <p><label for="passportLoss">Теряли ли вы паспорт или крали у вас паспорт ранее?</label>
-        <input type="checkbox" id="passportLoss" onchange="emptyCheckBox(id)" name="myData.passport.isLoss"></p>
+        <input type="checkbox" id="passportLoss" onchange="showBlock(lossPassport,id)" name="myData.passport.isLoss"></p>
 </div>
+<p><div id="lossPassport"style="display: none">
+        <div style="display: flex;flex-wrap: wrap">
+            <div style="margin-right: 50px"><label for="loss_passport_number">Его номер:</label><br/>
+                <input type="text" id="loss_passport_number" name="myData.loss_passport_number"></div>
+
+            <div style="margin-right: 50px"><label for="lossCountry">Страна выдачи:</label><br/>
+                            <input type="text" id="lossCountry" name="myData.loss_passport_country"></div>
+            <div><label for="lossExplain">Причина утери:</label><br/>
+                <input type="text" id="lossExplain" name="myData.loss_passport_explain"></div>
+        </div>
+    </div></p>
 
 <H2>Информация о приглашающей стороне</H2>
 
@@ -476,21 +550,21 @@
 </div>
 <div style="display: flex;flex-wrap: wrap">
     <div style="margin-right: 50px"><label for="receivingCompany">Название принимающей организации<br/> или отеля: (ответ обязателен)</label><br/>
-        <input style="width: 100% " type="text" id="receivingCompany" name="myData.inviter.country"></div>
+        <input style="width: 100% " type="text" id="receivingCompany" name="myData.inviter.company_name"></div>
 
     <div>
         <label>Отношение к вам<br/>(Если это отель - вариант "другие"): </label><br/>
-            <select style="width: 100% " name="myData.inviter.relationship">
-                <option value=0>родственник</option>
-                <option value=1>супруг</option>
-                <option value=2>друг</option>
-                <option value=3>деловой партнер</option>
-                <option value=4>работодатель</option>
-                <option value=5>обучение</option>
-                <option value=6>другое</option>
-            </select>
+        <select style="width: 100% " name="myData.inviter.relationship">
+            <option value=1>родственник</option>
+            <option value=2>супруг</option>
+            <option value=3>друг</option>
+            <option value=4>деловой партнер</option>
+            <option value=5>работодатель</option>
+            <option value=6>обучение</option>
+            <option value=7>другое</option>
+        </select>
         
-        </div>
+    </div>
 </div>
 <h3>Адрес отеля или организации:</h3>
 
@@ -531,10 +605,10 @@
         <input type="checkbox" id="fahterIsCitizenUSA" name="myData.father.is_sitizen_usa" onchange="showBlock(fatherSitizenUSA,id)"></p>
     <div id ='fatherSitizenUSA' style="display: none">
         <select name="myData.father.usa_status">
-            <option value=0>Гражданин США</option>
-            <option value=1>Имеет вид на жительство</option>
-            <option value=2>неиммиграционный статус</option>
-            <option value=3>другое</option>
+            <option value=1>Гражданин США</option>
+            <option value=2>Имеет вид на жительство</option>
+            <option value=3>неиммиграционный статус</option>
+            <option value=4>другое</option>
         </select>
     </div>
     
@@ -583,11 +657,11 @@
 
 <label>Адрес супруга:
     <select name="myData.spouse.address">
-        <option value=0>другое</option>
-        <option value=1>неизвестен</option>
-        <option value=2>как адрес кортакта в США</option>
-        <option value=3>как ваш почтовый</option>
-        <option value=4>как ваш домашний</option>
+        <option value=1>как ваш домашний</option>
+        <option value=2>как ваш почтовый</option>
+        <option value=3>как адрес кортакта в США</option>
+        <option value=4>неизвестен</option>
+        <option value=5>другое</option>
     </select>
 </label>
 
@@ -595,31 +669,31 @@
 <div id="jobBlock" style="display: flex;flex-wrap: wrap">
     <div id="job" style="margin-right: 50px">
         <label>Сфера деятельности(выберите вариант):</label><br/>
-            <select name="myData.job[0].kind_of_activity">
-                <option value="0">другое</option>
-                <option value="1">студент</option>
-                <option value="2">социальная сфера</option>
-                <option value="3">пенсионер</option>
-                <option value="4">научный сотрудник</option>
-                <option value="5">религиозная дейтельность</option>
-                <option value="6">спорт</option>
-                <option value="7">безработный</option>
-                <option value="8">естественные науки</option>
-                <option value="9">воинская служба</option>
-                <option value="10">здравоохранение</option>
-                <option value="11">юрист</option>
-                <option value="12">работа на дому</option>
-                <option value="13">госслужба</option>
-                <option value="14">инженерия</option>
-                <option value="15">образование</option>
-                <option value="16">сфера общепита</option>
-                <option value="17">IT сфера</option>
-                <option value="18">коммуникации</option>
-                <option value="19">бизнес</option>
-                <option value="20">какой-то другой исполнитель</option>
-                <option value="21">артист</option>
-                <option value="22">сельское хозяйство</option>
-            </select><br/>
+        <select name="myData.job[0].kind_of_activity">
+            <option value=22>другое</option>
+            <option value=21>студент</option>
+            <option value=20>социальная сфера</option>
+            <option value=19>пенсионер</option>
+            <option value=18>научный сотрудник</option>
+            <option value=17>религиозная дейтельность</option>
+            <option value=16>спорт</option>
+            <option value=16>безработный</option>
+            <option value=15>естественные науки</option>
+            <option value=14>воинская служба</option>
+            <option value=13>здравоохранение</option>
+            <option value=12>юрист</option>
+            <option value=11>работа на дому</option>
+            <option value=10>госслужба</option>
+            <option value=9>инженерия</option>
+            <option value=8>образование</option>
+            <option value=7>сфера общепита</option>
+            <option value=6>IT сфера</option>
+            <option value=5>коммуникации</option>
+            <option value=4>бизнес</option>
+            <option value=3>какой-то другой исполнитель</option>
+            <option value=2>артист</option>
+            <option value=1>сельское хозяйство</option>
+        </select><br/>
         
     
         <label for="organisationName">Название организации:</label><br/>
@@ -647,16 +721,29 @@
 
         <label for="jobStartDate">Дата начала работы:</label><br/>
         <input type="date" id="jobStartDate" name="myData.job[0].start_date"><br/>
+        
+        <label for="jobEndDate">Дата начала работы:</label><br/>
+                <input type="date" id="jobEndDate" name="myData.job[0].end_date"><br/>
 
         <label for="jobIncome">Ежемесячный доход в местной валюте:</label><br/>
         <input type="text" id="jobIncome" name="myData.job[0].wages"><br/>
+        
+        <label for="jobTitle">Профессия:</label><br/>
+        <input type="text" id="jobTitle" name="myData.job[0].title"><br/>
+        
+        <label for="job_supervizor_surname">Фамилия начальника:</label><br/>
+        <input type="text" id="job_supervizor_surname" name="myData.job[0].supervizor_surname"><br/>
+        
+        <label for="job_supervizor_name">Имя начальника:</label><br/>
+        <input type="text" id="job_supervizor_name" name="myData.job[0].supervizor_name"><br/>
+        
 
         <label for="jobPost">Занимаемая должность (в свободной форме):</label><br/>
         <input type="text" id="jobPost" name="myData.job[0].spec"/>
         <button type="button" id="addJob" onclick="cloneElement('job','jobBlock')">+</button>
     </div>
 </div>
-    <p>Добавьте места работы за последние 5 лет (где работали за 5 лет и уже уволились), если они есть</p>
+<p>Добавьте места работы за последние 5 лет (где работали за 5 лет и уже уволились), если они есть</p>
 
 <div id="study">
     
@@ -665,36 +752,36 @@
     
     <div id="studyEdicationShow" style="display: none">
         <div id="stubyBlock" style="display: flex;flex-wrap: wrap">
-        <div id="studyEdication" style="margin-right: 50px">
-            <label for="study_name">Название организации:</label><br/>
-            <input type="text" id="study_name" name="myData.study[0].company_name"><br/>
+            <div id="studyEdication" style="margin-right: 50px">
+                <label for="study_name">Название организации:</label><br/>
+                <input type="text" id="study_name" name="myData.study[0].company_name"><br/>
 
-            <label for="study_street">Улица, дом, строение:</label><br/>
-            <input type="text" id="study_street" name="myData.study[0].address.street"><br/>
+                <label for="study_street">Улица, дом, строение:</label><br/>
+                <input type="text" id="study_street" name="myData.study[0].address.street"><br/>
 
-            <label for="study_city">Город:</label><br/>
-            <input type="text" id="study_city" name="myData.study[0].address.city"><br/>
+                <label for="study_city">Город:</label><br/>
+                <input type="text" id="study_city" name="myData.study[0].address.city"><br/>
 
-            <label for="study_region">Регион:</label><br/>
-            <input type="text" id="study_region" name="myData.study[0].address.region"><br/>
+                <label for="study_region">Регион:</label><br/>
+                <input type="text" id="study_region" name="myData.study[0].address.region"><br/>
 
-            <label for="study_index">Индекс:</label><br/>
-            <input type="text" id="study_index" name="myData.study[0].address.index"><br/>
+                <label for="study_index">Индекс:</label><br/>
+                <input type="text" id="study_index" name="myData.study[0].address.index"><br/>
 
-            <label for="study_country">Страна:</label><br/>
-            <input type="text" id="study_country" name="myData.study[0].address.country"><br/>
+                <label for="study_country">Страна:</label><br/>
+                <input type="text" id="study_country" name="myData.study[0].address.country"><br/>
 
-            <label for="study_spec">Направление или специальность:</label><br/>
-            <input type="text" id="study_spec" name="myData.study[0].spec"><br/>
+                <label for="study_spec">Направление или специальность:</label><br/>
+                <input type="text" id="study_spec" name="myData.study[0].spec"><br/>
 
-            <label for="study_start_date">Дата начала учебы:</label><br/>
-            <input type="date" id="study_start_date" name="myData.study[0].start_date"><br/>
+                <label for="study_start_date">Дата начала учебы:</label><br/>
+                <input type="date" id="study_start_date" name="myData.study[0].start_date"><br/>
 
-            <label for="study_end_date">Дата окончания учебы:</label><br/>
-            <input type="date" id="study_end_date" name="myData.study[0].end_date">
-            <button type="button" id="addStudy" onclick="cloneElement('studyEdication','stubyBlock')">+</button>
+                <label for="study_end_date">Дата окончания учебы:</label><br/>
+                <input type="date" id="study_end_date" name="myData.study[0].end_date">
+                <button type="button" id="addStudy" onclick="cloneElement('studyEdication','stubyBlock')">+</button>
+            </div>
         </div>
-      </div>
     </div>
     
     
@@ -750,7 +837,7 @@
         отрядом бдительности, повстанческой группой, партизанской группой или повстанческой организацией?</label>
     <input type="checkbox" id="specGroup" onchange="emptyCheckBox(id)" name="myData.additive_info.have_spec_group"></p>
 
-  <button type="submit">Download</button>
+<button type="submit">Download</button>
 </form>
 
 
