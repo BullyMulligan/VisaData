@@ -118,13 +118,13 @@
 
 <div style="display: flex;flex-wrap: wrap;"><div style="margin-right: 50px"><label style="margin-right: 10px">Цель поездки в США.<br/>Выберите тип визы:</label>
         <select  id="visaType" name="myData.info_about_travel.visa_char" onchange="showOneOfUs(id)">
-            <option value=1>A</option>
-            <option value=2>B</option>
-            <option value=3>C</option>
-            <option value=4>D</option>
-            <option value=5>E</option>
-            <option value=6>F</option>
-            <option value=7>G</option>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+            <option value="4">D</option>
+            <option value="5">E</option>
+            <option value="6">F</option>
+            <option value="7">G</option>
         </select></div>
 
     <div id="visaTypeB" style="display:none;">
@@ -291,20 +291,20 @@
         <input type="checkbox" id="cardLoss" onchange="showBlock(loss_visa,id)" name="myData.loss_visa" ></p>
     
     <div id="loss_visa" style="display: none">
-            <label for="yearLossVisa">Год, потери:</label>
-            <p><input type="number" id="yearLossVisa" name="myData.year_loss_visa"></p>
+        <label for="yearLossVisa">Год, потери:</label>
+        <p><input type="number" id="yearLossVisa" name="myData.year_loss_visa"></p>
         
-            <label for="loss_explain">Краткое объяснение:</label>
-            <p><input type="text" id="loss_explain" name="myData.loss_explain"></p>
-        </div>
+        <label for="loss_explain">Краткое объяснение:</label>
+        <p><input type="text" id="loss_explain" name="myData.loss_explain"></p>
+    </div>
     
     <p><label for="cancellationVisa">Виза была аннулирована?</label>
         <input type="checkbox" id="cancellationVisa" onchange="showBlock(cancel_visa,id)" name="myData.cancelled_visa" ></p>
     
     <div id="cancel_visa" style="display: none">
         <label for="cancel_explain">Причина:</label>
-                <p><input type="text" id="cancel_explain" name="myData.cancel_explain"></p>
-            </div>
+        <p><input type="text" id="cancel_explain" name="myData.cancel_explain"></p>
+    </div>
     
     <div id = "checkGroup">
         <p><label for="visaRefusal">Отказывали ли вам в визе США или во въезде в страну?</label>
@@ -321,9 +321,9 @@
     <p><label for="immigrationAttempt">Была ли когда-либо от вашего имени послана петиция в иммиграционный отдел (пытались ли вы иммигрировать)?<br/>(ответ да - если вы выиграли Грин кард и заполняли заявление, или если у вас была виза и вы подавали документы в США, чтобы легализоваться)  </label>
         <input type="checkbox" id="immigrationAttempt" onchange="showBlock(imigration,id)" name="myData.greencard" ></p>
     <div id="imigration" style="display: none">
-            <label for="imigration_explain">Напишите подробнее:</label>
-                    <p><input type="text" id="imigration_explain" name="myData.imigration_explain"></p>
-                </div>
+        <label for="imigration_explain">Напишите подробнее:</label>
+        <p><input type="text" id="imigration_explain" name="myData.imigration_explain"></p>
+    </div>
     
 </div>
 <H2>Контактная информация</H2>
@@ -390,7 +390,7 @@
     <div id="otherNumberBlock"style="display: none">
         <div id="containerOther" style="display: flex;flex-wrap: wrap">
             <div  style="margin-right: 10px;margin-bottom: 10px">
-                <input type="text" name="myData.numbers_of_fives_years" id="otherNumberField" required>
+                <input type="text" name="myData.numbers_of_fives_years" id="otherNumberField">
                 <button type="button" id="addNumber" onclick="addField('otherNumberField','containerOther')">+</button>
             </div>
         </div>
@@ -436,29 +436,29 @@
     <div id="containerOfLinks"style="display: flex;flex-wrap: wrap">
         <div id="containerOtherSocial" style="margin-right: 10px">
             <div style="margin-right: 10px;"><label > Единица <br/>времени:</label><br/>
-                            <select name="myData.public_links[0].linl_soc_web">
-                                <option selected="selected" value="ASKF">ASK.FM</option>
-                                <option value=1>DOUBAN</option>
-                                <option value=2>FACEBOOK</option>
-                                <option value=3>FLICKR</option>
-                                <option value=4>GOOGLE+</option>
-                                <option value=5>INSTAGRAM</option>
-                                <option value=6>LINKEDIN</option>
-                                <option value=7>MYSPACE</option>
-                                <option value=8>PINTEREST</option>
-                                <option value=9>QZONE (QQ)</option>
-                                <option value=10>REDDIT</option>
-                                <option value=11>SINA WEIBO</option>
-                                <option value=12>TENCENT WEIBO</option>
-                                <option value=13>TUMBLR</option>
-                                <option value=14>TWITTER</option>
-                                <option value=15>TWOO</option>
-                                <option value=16>VINE</option>
-                                <option value=17>VKONTAKTE (VK)</option>
-                                <option value=18>YOUKU</option>
-                                <option value=19>YOUTUBE</option>
-                                <option value=20>NONE</option>
-                            </select></div>
+                <select name="myData.public_links[0].linl_soc_web">
+                    <option selected="selected" value="ASKF">ASK.FM</option>
+                    <option value=1>DOUBAN</option>
+                    <option value=2>FACEBOOK</option>
+                    <option value=3>FLICKR</option>
+                    <option value=4>GOOGLE+</option>
+                    <option value=5>INSTAGRAM</option>
+                    <option value=6>LINKEDIN</option>
+                    <option value=7>MYSPACE</option>
+                    <option value=8>PINTEREST</option>
+                    <option value=9>QZONE (QQ)</option>
+                    <option value=10>REDDIT</option>
+                    <option value=11>SINA WEIBO</option>
+                    <option value=12>TENCENT WEIBO</option>
+                    <option value=13>TUMBLR</option>
+                    <option value=14>TWITTER</option>
+                    <option value=15>TWOO</option>
+                    <option value=16>VINE</option>
+                    <option value=17>VKONTAKTE (VK)</option>
+                    <option value=18>YOUKU</option>
+                    <option value=19>YOUTUBE</option>
+                    <option value=20>NONE</option>
+                </select></div>
             
             <label for="otherAccount">Ссылка на аккаунт:</label>
             <br/><input type="text" id="otherAccount" name="myData.public_links[0].link_to_account">
@@ -521,16 +521,16 @@
         <input type="checkbox" id="passportLoss" onchange="showBlock(lossPassport,id)" name="myData.passport.isLoss"></p>
 </div>
 <p><div id="lossPassport"style="display: none">
-        <div style="display: flex;flex-wrap: wrap">
-            <div style="margin-right: 50px"><label for="loss_passport_number">Его номер:</label><br/>
-                <input type="text" id="loss_passport_number" name="myData.loss_passport_number"></div>
+    <div style="display: flex;flex-wrap: wrap">
+        <div style="margin-right: 50px"><label for="loss_passport_number">Его номер:</label><br/>
+            <input type="text" id="loss_passport_number" name="myData.loss_passport_number"></div>
 
-            <div style="margin-right: 50px"><label for="lossCountry">Страна выдачи:</label><br/>
-                            <input type="text" id="lossCountry" name="myData.loss_passport_country"></div>
-            <div><label for="lossExplain">Причина утери:</label><br/>
-                <input type="text" id="lossExplain" name="myData.loss_passport_explain"></div>
-        </div>
-    </div></p>
+        <div style="margin-right: 50px"><label for="lossCountry">Страна выдачи:</label><br/>
+            <input type="text" id="lossCountry" name="myData.loss_passport_country"></div>
+        <div><label for="lossExplain">Причина утери:</label><br/>
+            <input type="text" id="lossExplain" name="myData.loss_passport_explain"></div>
+    </div>
+</div></p>
 
 <H2>Информация о приглашающей стороне</H2>
 
@@ -723,7 +723,7 @@
         <input type="date" id="jobStartDate" name="myData.job[0].start_date"><br/>
         
         <label for="jobEndDate">Дата начала работы:</label><br/>
-                <input type="date" id="jobEndDate" name="myData.job[0].end_date"><br/>
+        <input type="date" id="jobEndDate" name="myData.job[0].end_date"><br/>
 
         <label for="jobIncome">Ежемесячный доход в местной валюте:</label><br/>
         <input type="text" id="jobIncome" name="myData.job[0].wages"><br/>
@@ -845,6 +845,7 @@
 
     function showBlock(element,checkbox)
     {
+        document.getElementById(checkbox).value=false;
         if (document.getElementById(checkbox).checked)
             {
                 document.getElementById(checkbox).value=true
@@ -974,11 +975,16 @@
              });
          });
      });
-    function showOneOfUs(id){
-        switch (document.getElementById(id).value){
-            case "B":
-                document.getElementById("visaTypeB").style.display="block";
-                break;
+    function showOneOfUs(id) {
+            var selectedValue = document.getElementById(id).value;
+    
+            switch (selectedValue) {
+                case "2":
+                    document.getElementById("visaTypeB").style.display = "block";
+                    break;
+                default:
+                    document.getElementById("visaTypeB").style.display = "none";
+                    break;
+            }
         }
-    }
      </script>

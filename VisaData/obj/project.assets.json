@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\slash\\source\\repos\\VisaData\\VisaData\\VisaData.csproj",
+      "projectUniqueName": "C:\\Users\\slash\\RiderProjects\\VisaData\\VisaData\\VisaData.csproj",
       "projectName": "VisaData",
-      "projectPath": "C:\\Users\\slash\\source\\repos\\VisaData\\VisaData\\VisaData.csproj",
+      "projectPath": "C:\\Users\\slash\\RiderProjects\\VisaData\\VisaData\\VisaData.csproj",
       "packagesPath": "C:\\Users\\slash\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\slash\\source\\repos\\VisaData\\VisaData\\obj\\",
+      "outputPath": "C:\\Users\\slash\\RiderProjects\\VisaData\\VisaData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\slash\\AppData\\Roaming\\NuGet\\NuGet.Config",
